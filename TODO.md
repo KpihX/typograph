@@ -1,0 +1,1 @@
+- Redo toString() of Bow
