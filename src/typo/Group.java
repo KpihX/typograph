@@ -5,10 +5,10 @@ import java.util.LinkedList;
 public abstract class Group extends Box {
     protected final LinkedList<Box> list = new LinkedList<Box>();
 
-    private double ascent;
-    private double descent;
-    private double width;
-    private double stretchingCapacity;
+    protected double ascent;
+    protected double descent;
+    protected double width;
+    protected double stretchingCapacity;
 
     public void add(Box b) {
         list.add(b);
@@ -40,7 +40,7 @@ public abstract class Group extends Box {
 
         for (Box b: list) {
             // System.out.println("**" + b.toString());
-            result += "\t" + b.toString().replaceAll("\t", "\t\t").replaceAll("}", "\t}") + ",\n";
+            result += "\t" + b.toString().replaceAll("\n", "\n\t") + ",\n";
         }
 
         result += "}";
