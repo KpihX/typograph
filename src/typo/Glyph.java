@@ -41,12 +41,13 @@ public class Glyph extends Box {
         return 0;
     };
 
+    @Override
     public String toString() {
-        return String.format("Glyph(%s)[w=%g, a=%g, d=%g, sC=%g]",
-            chars[0], this.getWidth(), this.getAscent(),
-            this.getDescent(), this.getStretchingCapacity());
+        return String.format("Glyph(%s)",
+            chars[0]) + super.toString();
     }
 
+    @Override
     public boolean doDraw(Graphics graph, double x, double y, double w) {
         graph.setFont(font);
         graph.drawChars(chars, 0, 1, (int) (x-bounds.getX()), (int) (y-bounds.getY()));

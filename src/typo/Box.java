@@ -20,4 +20,9 @@ public abstract class Box {
         }
         return doDraw(graph, x, y, w);
     }
+
+    public String toString() {
+        return String.format("[w=%g, a=%g, d=%g, sC=%g]", this.getWidth(), this.getAscent(),
+            this.getDescent(), this.getStretchingCapacity());
+    }
 }
