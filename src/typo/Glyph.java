@@ -47,6 +47,7 @@ public class Glyph extends Box {
             this.getDescent(), this.getStretchingCapacity());
     }
 
+    @Override
     public boolean doDraw(Graphics graph, double x, double y, double w) {
         graph.setFont(font);
         graph.drawChars(chars, 0, 1, (int) (x-bounds.getX()), (int) (y-bounds.getY()));
